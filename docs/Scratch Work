@@ -1,1 +1,81 @@
-//lol gonna try to push this -Mack
+User Interface A: You are responsible for the command line interface used by the user to run the program. Create a file, userinterface.txt, in the docs folder to document the user interface. (the command prompt options)
+
+
+
+	Notes:
+
+Use args[0] to access String type Input
+
+
+
+Three types of input:
+
+No arguments → list available files
+
+One argument → display that file
+
+Two arguments → display file using alternate cipher key
+
+More than two → error
+
+Non-numeric file number → error
+
+
+
+Read args[0]
+
+
+
+File Handler B: You are responsible for the part of the problem that reads data files. The program should expect files in a folder named data (in the same directory of the program, or in the root of your project folder.) When a request for a file is received, this part of the program will return the file contents. This part of the program should handle all the direct access to files. Document the plan your team makes for the design of your software in a text file named filehandler.txt.
+
+
+
+
+
+String readFile(int fileNum)
+
+String readFile(String fileName_
+
+
+
+
+
+Program Control C: You are responsible for connecting the command line to the file handler, requesting file contents and returning readable text. When the program is executed with no arguments, this part of the program should provide a list of files available, as provided from the work of Team Member B, along with a corresponding number. Document the plan your team makes for testing in programcontrol.txt.
+
+Constructor!!
+
+Getters and Setters
+
+
+
+fileRequest(String, “filename”)  (returns contents of file written by teammate b)
+
+FileRequest(No arguments) (returns the names of files available and # of files)
+
+
+
+
+
+Cipher D (For teams with four members): You are responsible for implementing the ciphering feature. This feature should accept a ciphered string and return it deciphered. The cipher will be stored in a file named key.txt, stored in a folder, ciphers, (in the same directory of the program, or in the root of your project folder.) This file will contain two lines, the first line is the actual letter, the second line is the cipher match. When the cipher is accessed, it must be validated. An example will be provided. Document this in cipher.txt.
+
+	Notes:
+
+Homework 2 – Cipher Part D
+
+2/13/2026
+
+Group 2-13
+
+Description about code:
+
+Pseudocode:
+
+Cipher:
+
+	Variables:
+
+chars: 	char[]
+
+cipherChars: char[]
+
+constructor():

@@ -1,6 +1,7 @@
 Instructions:
 1. The program should be run from the class TopSecret… e.g., using the command:
  java topsecret
+pull
 
 When the program runs with no arguments, it should list the numbered files available to display. E.g.:
 01 filea.txt
