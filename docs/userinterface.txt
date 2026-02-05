@@ -35,5 +35,3 @@ folderPath = “folder_path”
 folderContents = getFiles(folderPath)
 file = folderContents[fileIndex]
 print(file.read())
-
- .
