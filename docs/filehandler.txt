@@ -1,6 +1,4 @@
 ----- UML -----
--DATA_FOLDER: String
-
 +getFileList: ArrayList<String>
 +readFile(int): String
 +String readFile(String): String
@@ -8,7 +6,7 @@
 ----- PSEUDOCODE -----
 function getFileList():
     create ArrayList of fileNames
-    get all the files in DATA_FOLDER
+    get all the files in the data folder
 
     if files exist:
         for each loop through all files
