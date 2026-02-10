@@ -1,3 +1,6 @@
+Brandon Chu
+Feb 9 2026
+--------------------------------------------------------------------------------------------------------------
 Instructions:
 1. The program should be run from the class TopSecret… e.g., using the command:
  java topsecret
@@ -11,27 +14,57 @@ When the program runs with no arguments, it should list the numbered files avail
  java topsecret 01
 (this displays on screen the contents of the file filea.txt)
 
-The program exits after showing the file list, the contents of an indicated file, or after displaying an error message.
+3. The program exits after showing the file list, the contents of an indicated file, or after displaying an error
+message.
+--------------------------------------------------------------------------------------------------------------
+Notes:
+Use args[0] to access String type Input
 
-Tasks:
-1. Program is run “java topsecret” with no args
-2. Program is run “java topsecret 01” with 1 arg
-3. Error messages in case of invalid inputs
+Three types of input (contructors):
+No arguments → list available files
+One argument → display that file
+Two arguments → display file using alternate cipher key
 
+1. More than two → error
+2. Non-numeric file number → error
+3. Read args[] in main() --> commandLineReader()
+4. Validate the input --> InvalidInput()
+5. Output actions
+
+--------------------------------------------------------------------------------------------------------------
 Pseudocode:
-Task #1: Program is run “java topsecret” with no args (print all files)
+CommandLineReader():
+	IsNumeric(String file):
+		null
+	InvalidInput(String type):
+print(“Invalid input: ”)
+		if type = “notNumeric”:
+Print(“file number needs to be numeric”)
+		elif type = “manyInputs”:
+			Print(“too many outputs”)
+Read(String[] args):
+If args.length == 0:
+	Return Instruction(“List available Files”)
+Elif !isNumeric(args[0]):
+	InvalidInput(“notNumeric”)
+	Return -1
+Elif args.length == 1:
+	Return instruction(“Display file contents”)
+Elif args.legnth == 2:
+	Return instruction(“Display file using alternate key”)
+Elif args.length > 2:
+	Invalid Input(“manyInputs”)
+Return -1
+--------------------------------------------------------------------------------------------------------------
+UML:
+CommandLineReader()
+---------------------------------------
+-IsNumeric(String file)
+-InvalidInput(String type)
++read(String[] args)
 
-folderPath = “folder_path”
-folderContents = getFiles(folderPath)
-Int counter = 0
-For files in folderContents:
-	counter+=1
-	print(counter(use f string to format) + files)
------------------------------------------------------------------------
-Task #2: Program is run “java topsecret 01” with 1 arg
-given: fileIndex
-
-folderPath = “folder_path”
-folderContents = getFiles(folderPath)
-file = folderContents[fileIndex]
-print(file.read())
+Errors to Test for
+- Too many arguments supplied
+- File number is not numeric
+- Empty file number argument
+- Negative File number
