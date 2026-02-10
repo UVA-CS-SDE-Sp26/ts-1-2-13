@@ -1,0 +1,108 @@
+Homework 2 - Top Secret
+2/13/2026
+Group 2-13
+
+The Cipher class deciphers ciphered text using a substitution key.
+The cipher key is stored in a file named key.txt inside the ciphers folder.
+The key file contains two lines - the first line contains the actual characters and the
+second line contains the ciphered equivalents. The key is validated before being used.
+The Cipher class accepts a ciphered string and returns the deciphered result.
+
+UML:
+
+Cipher
+------------------------------------------------
+-actualChars: char[]
+-cipherChars: char[]
+------------------------------------------------
++Cipher(): void
++Cipher(keyPath: String): void
+-loadKey(path: String): void
+-validateKey(): void
+-noDuplicates(arr: char[]): void
++decipher(cipherText: String): String
+
+PSEUDOCODE:
+
+constructor Cipher():
+    call loadKey("ciphers/key.txt")
+
+constructor Cipher(String keyPath):
+    call loadKey(keyPath)
+
+function loadKey(String path):
+    read all lines from file at path
+
+    if file has fewer than 2 lines:
+        throw error
+
+    actualLine = first line trimmed
+    cipherLine = second line trimmed
+
+    if actualLine is empty OR cipherLine is empty:
+        throw error
+
+    if length(actualLine) != length(cipherLine):
+        throw error
+
+    actualChars = convert actualLine to char array
+    cipherChars = convert cipherLine to char array
+
+    call validateKey()
+
+function validateKey():
+    call noDuplicates(plainChars)
+    call noDuplicates(cipherChars)
+
+function noDuplicates(char[] arr):
+    for i from 0 to length(arr) - 1:
+        for j from i + 1 to length(arr) - 1:
+            if arr[i] == arr[j]:
+                throw error
+
+function decipher(String cipherText):
+    result = empty string
+
+    for each character ch in cipherText:
+        found = false
+
+        for i from 0 to length(cipherChars) - 1:
+            if cipherChars[i] == ch:
+                append actualChars[i] to result
+                found = true
+                break
+
+        if found is false:
+            append ch to result
+
+    return result
+
+----- KEY FILE FORMAT -----
+
+The key file must contain exactly two lines.
+
+Line 1: Actual characters
+Line 2: Cipher characters
+
+Each character in line 2 matches to the character at the same index in line 1.
+
+Example key.txt file:
+
+abcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ1234567890
+bcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ1234567890a
+
+----- TESTS -----
+
+loading a valid key file initializes the cipher correctly
+
+loading a key file with different length lines throws an error
+
+loading a key file with duplicate characters throws an error
+
+deciphering a known ciphered string returns the correct plaintext
+
+characters not present in the cipher key (spaces, punctuation, symbols) remain unchanged
+
+using an alternate key path produces different deciphered output
+
+missing or unreadable key file results in an error

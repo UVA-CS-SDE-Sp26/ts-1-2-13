@@ -1,0 +1,36 @@
+----- UML -----
++getFileList: ArrayList<String>
++readFile(int): String
++String readFile(String): String
+
+----- PSEUDOCODE -----
+function getFileList():
+    create ArrayList of fileNames
+    get all the files in the data folder
+
+    if files exist:
+        for each loop through all files
+        if file name ends with .txt:
+            add name to fileNames
+        sort fileNames
+
+    return fileNames
+
+function readFile(integer i):
+    ArrayList of files = getFileList()
+    if fileNumber < 1 or fileNumber > size(files):
+        return "File Number not Found"
+
+    fileName = get file at index integer
+    return readFileByName(fileName)
+
+function readFile(String fileName):
+    fullPath = DATA_FOLDER + fileName
+    contents = read file at fullPath
+    return contents
+
+----- TESTS -----
+- checking if all files in a folder properly appear
+- reading a file with an invalid number
+- reading a file at an index/with a file name
+    - accessing a test file and comparing the contents to a hardcoded string
