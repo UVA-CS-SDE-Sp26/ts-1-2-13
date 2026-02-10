@@ -77,7 +77,7 @@ function decipher(String cipherText):
 
     return result
 
------ KEY FILE FORMAT -----
+Key File Format:
 
 The key file must contain exactly two lines.
 
@@ -91,18 +91,13 @@ Example key.txt file:
 abcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ1234567890
 bcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ1234567890a
 
------ TESTS -----
 
-loading a valid key file initializes the cipher correctly
+TESTS:
 
-loading a key file with different length lines throws an error
-
-loading a key file with duplicate characters throws an error
-
-deciphering a known ciphered string returns the correct plaintext
-
-characters not present in the cipher key (spaces, punctuation, symbols) remain unchanged
-
-using an alternate key path produces different deciphered output
-
-missing or unreadable key file results in an error
+-loading a valid key file initializes the cipher correctly
+-loading a key file with different length lines throws an error
+-loading a key file with duplicate characters throws an error
+-deciphering a known ciphered string returns the correct plaintext
+-characters not present in the cipher key (spaces, punctuation, symbols) remain unchanged
+-using an alternate key path produces different deciphered output
+-missing or unreadable key file results in an error
