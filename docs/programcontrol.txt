@@ -1,0 +1,26 @@
+
+//Program Control
+
+//Connect the command line with the file handler
+
+//Teammate A User Interface
+    //Class CommandLineReader
+        //read
+        //isNumeric
+        //invalidInput
+//Teammate B File Handler
+    //Class FileHandler
+        //getFileList
+        //readFile
+//Teammate D Cipher
+    //Class Cipher
+        //loadKey
+        //validateKey
+        //noDuplicates
+        //decipher
+
+//Order of Events
+    //Read in file request
+    //put scanned info into read(scanned info)
+    //
+

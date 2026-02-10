@@ -1,4 +1,5 @@
 public class CommandLineReader {
+    FileHandler fileHandler = new FileHandler();
     public int read(String[] args) {
         // No arguments --> list available files
         if (args.length == 0) {
