@@ -22,10 +22,9 @@ public class ProgramControl {
         }
         else {
             argsArray = new String[]{fileRequest, alternativeCipherKey};
-
         }
-
         commandLineReader.read(argsArray);
+
 
 
 
