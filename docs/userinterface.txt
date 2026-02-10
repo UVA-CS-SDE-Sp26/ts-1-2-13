@@ -58,11 +58,19 @@ Return -1
 --------------------------------------------------------------------------------------------------------------
 UML:
 CommandLineReader()
----------------------------------------
+----------------
 -IsNumeric(String file)
 -InvalidInput(String type)
 +read(String[] args)
 
+Instruction()
+----------------
++LIST_FILES = 0;
++DISPLAY_FILE = 1;
++DISPLAY_FILE_ALT_KEY = 2;
++ERROR = -1;
+
+--------------------------------------------------------------------------------------------------------------
 Errors to Test for
 - Too many arguments supplied
 - File number is not numeric
