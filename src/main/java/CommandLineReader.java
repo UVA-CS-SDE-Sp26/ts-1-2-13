@@ -30,10 +30,7 @@ public class CommandLineReader {
             return;
         }
 
-        int fileNumber = 0;
-
-
-
+            int fileNumber = Integer.parseInt(args[0]);
 
         // Negative file number
         if (fileNumber < 0) {
