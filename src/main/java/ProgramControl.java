@@ -15,14 +15,22 @@ public class ProgramControl {
         System.out.println("Insert alternative cipher key filename, to use default key press enter");
         String alternativeCipherKey = sc.nextLine();
 
-        //Creates String Array of file name and key
+        //Creates String Array of file name and key (leaves empty if no file name present)
         String[] argsArray = {};
         if (alternativeCipherKey.isEmpty()) {
             argsArray = new String[]{fileRequest};
         }
-        else {
-            argsArray = new String[]{fileRequest, alternativeCipherKey};
+            if (fileRequest.isEmpty()) {
+                argsArray = new String[]{};
+            }
+        if(!fileRequest.isEmpty() && !alternativeCipherKey.isEmpty()){
+            argsArray = new String[]{fileRequest,alternativeCipherKey};
         }
+        else {
+            argsArray = new String[]{};
+        }
+
+        //verifies that the Array of arguments is valid
         commandLineReader.read(argsArray);
 
 
