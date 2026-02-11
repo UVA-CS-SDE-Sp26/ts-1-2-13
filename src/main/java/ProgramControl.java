@@ -21,13 +21,16 @@ public class ProgramControl {
             argsArray = new String[]{fileRequest};
         }
             if (fileRequest.isEmpty()) {
-                argsArray = new String[]{};
+                argsArray = new String[]{"null"};
             }
         if(!fileRequest.isEmpty() && !alternativeCipherKey.isEmpty()){
             argsArray = new String[]{fileRequest,alternativeCipherKey};
         }
+        if (!fileRequest.isEmpty() && alternativeCipherKey.isEmpty()){
+            argsArray = new String[]{fileRequest};
+        }
         else {
-            argsArray = new String[]{};
+            argsArray = new String[]{"null"};
         }
 
         //verifies that the Array of arguments is valid

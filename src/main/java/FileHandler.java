@@ -11,6 +11,7 @@ public class FileHandler {
         ArrayList<String> fileNames = new ArrayList<>();
         File[] files = dataFolder.listFiles();
 
+
         for(File file: files)
             fileNames.add(file.getName());
 
