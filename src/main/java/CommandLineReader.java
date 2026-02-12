@@ -5,7 +5,7 @@ public class CommandLineReader {
     public int read(String[] args) throws Exception {
         // No arguments --> list available files
         FileHandler fileHandler = new FileHandler();
-        Cipher cipher = new Cipher();
+
         if (Objects.equals(args[0], "null")) {
 //            fileHandler.getFileList();
 //            return Instruction.LIST_FILES;
@@ -22,14 +22,14 @@ public class CommandLineReader {
         // Empty argument
         if (args[0] == null || args[0].isEmpty()) {
             invalidInput("notNumeric");
-//            return Instruction.ERROR;
+//
             return 0;
         }
 
         // Non-numeric file number
         if (!isNumeric(args[0])) {
             invalidInput("notNumeric");
-//            return Instruction.ERROR;
+//
             return 0;
         }
 
@@ -38,7 +38,7 @@ public class CommandLineReader {
         // Negative file number
         if (fileNumber < 0) {
             invalidInput("negativeNumber");
-//            return Instruction.ERROR;
+//
             return 0;
         }
 
@@ -49,8 +49,9 @@ public class CommandLineReader {
         }
 
         // Two arguments --> display file using alternate cipher key
-//        return Instruction.DISPLAY_FILE_ALT_KEY;
+//
         if (args.length == 2) {
+            Cipher cipher = new Cipher();
 //            cipher.newCipher(args[1]);
         }
         return 0;
