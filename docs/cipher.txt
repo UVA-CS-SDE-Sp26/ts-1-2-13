@@ -31,6 +31,9 @@ constructor Cipher(String keyPath):
     call loadKey(keyPath)
 
 function loadKey(String path):
+    if file does not exist
+        throw error
+
     read all lines from file at path
 
     if file has fewer than 2 lines:
@@ -93,6 +96,15 @@ bcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ1234567890a
 
 
 TESTS:
+
+-loadKey(path: String): void
+
+-validateKey(): void
+-noDuplicates(arr: char[]): void
+
+
+
++decipher(cipherText: String): String
 
 -loading a valid key file initializes the cipher correctly
 -loading a key file with different length lines throws an error

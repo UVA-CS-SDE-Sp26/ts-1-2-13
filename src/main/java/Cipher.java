@@ -1,4 +1,5 @@
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -19,11 +20,12 @@ public class Cipher {
     //loads the key file and validates
     private void loadKey(String path) throws Exception {
         // check if file exists
-        if (!Files.exists(Paths.get(path))) {
+        Path path1 = Paths.get(path);
+        if (!Files.exists(path1)) {
             throw new IllegalArgumentException("Key file not found: " + path);
         }
 
-        List<String> lines = Files.readAllLines(Paths.get(path));
+        List<String> lines = Files.readAllLines(path1);
 
         if (lines.size() < 2) {
             throw new IllegalArgumentException("Key file needs two lines");
