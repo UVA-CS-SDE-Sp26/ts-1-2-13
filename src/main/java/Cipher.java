@@ -18,6 +18,11 @@ public class Cipher {
 
     //loads the key file and validates
     private void loadKey(String path) throws Exception {
+        // check if file exists
+        if (!Files.exists(Paths.get(path))) {
+            throw new IllegalArgumentException("Key file not found: " + path);
+        }
+
         List<String> lines = Files.readAllLines(Paths.get(path));
 
         if (lines.size() < 2) {
