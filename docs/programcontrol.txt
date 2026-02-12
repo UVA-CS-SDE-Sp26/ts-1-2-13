@@ -11,7 +11,8 @@
 //Teammate B File Handler
     //Class FileHandler
         //getFileList
-        //readFile
+        //readFile (Int)
+        //readFile (String)
 //Teammate D Cipher
     //Class Cipher
         //loadKey

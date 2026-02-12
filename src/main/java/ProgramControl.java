@@ -35,7 +35,7 @@ public class ProgramControl {
 
         //Runs when only file number is provided
         if (intCheck == 1) {
-            fileHandler.readFile(argsArray[0]);
+//            fileHandler.readFile(argsArray[0]);
         }
 
 
