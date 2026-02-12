@@ -12,7 +12,7 @@ public class Cipher {
     }
 
     //constructor for alternate key
-    public Cipher(String keyPath)  throws Exception {
+    public void newCipher(String keyPath)  throws Exception {
         loadKey(keyPath);
     }
 
