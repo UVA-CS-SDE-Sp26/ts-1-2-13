@@ -31,7 +31,13 @@ public class ProgramControl {
         }
 
         //verifies that the Array of arguments is valid
-        commandLineReader.read(argsArray);
+        int intCheck = commandLineReader.read(argsArray);
+
+        //Runs when only file number is provided
+        if (intCheck == 1) {
+            fileHandler.readFile(argsArray[0]);
+        }
+
 
 
 
