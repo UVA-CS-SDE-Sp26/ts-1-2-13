@@ -13,12 +13,12 @@ public class Cipher {
     }
 
     //constructor for alternate key
-    public void newCipher(String keyPath)  throws Exception {
+    public Cipher(String keyPath)  throws Exception {
         loadKey(keyPath);
     }
 
     //loads the key file and validates
-    private void loadKey(String path) throws Exception {
+    public void loadKey(String path) throws Exception {
         // check if file exists
         Path path1 = Paths.get(path);
         if (!Files.exists(path1)) {

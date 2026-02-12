@@ -52,7 +52,7 @@ public class CommandLineReader {
 //
         if (args.length == 2) {
             Cipher cipher = new Cipher();
-//            cipher.newCipher(args[1]);
+            cipher.loadKey(args[1]);
         }
         return 0;
         }
