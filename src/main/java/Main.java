@@ -1,8 +1,12 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        ProgramControl program = new ProgramControl();
-
-
-
+        try {
+            ProgramControl program = new ProgramControl();
+            // if ProgramControl does work in its constructor, this will catch it
+            // if it has a method later, call it here
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
+
 }
