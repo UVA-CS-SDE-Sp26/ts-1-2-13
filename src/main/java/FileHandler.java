@@ -10,6 +10,8 @@ public class FileHandler {
     public ArrayList<String> getFileList(){
         ArrayList<String> fileNames = new ArrayList<>();
         File[] files = dataFolder.listFiles();
+        if (files == null || files.length == 0)
+            return null;
 
 
         for(File file: files)
