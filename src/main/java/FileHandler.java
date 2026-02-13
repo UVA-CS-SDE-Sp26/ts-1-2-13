@@ -30,10 +30,15 @@ public class FileHandler {
     // Takes a file index as an input and returns a string of the file's contents
     public String readFile(int fileNum) throws FileNotFoundException {
         ArrayList<String> files = getFileList();
-        if (files == null || fileNum >= files.size() || fileNum < 1)
+        if (files == null || fileNum >= files.size() || fileNum < 1) {
+
             return "File Index is Invalid";
-        else
+        }
+
+
+        else {
             return readFile(files.get(fileNum-1));
+        }
     }
 
     // Takes a file name as an input and returns a string of the file's contents
@@ -41,6 +46,8 @@ public class FileHandler {
 
         try {
             File currFile = new File(dataFolder, fileName);
+            System.out.println(fileName);
+            System.out.println(currFile);
             Scanner reader = new Scanner(currFile);
             String content = "";
 
