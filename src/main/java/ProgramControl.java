@@ -36,7 +36,7 @@ public class ProgramControl {
         //Runs when only file number is provided
         if (intCheck == 1) {
             String finalFile = fileHandler.readFile(Integer.parseInt(argsArray[0]));
-            System.out.print(finalFile);
+            System.out.print(cipher.decipher(finalFile));
         }
         if (intCheck == 0) {
             System.out.print(fileHandler.getFileList());
