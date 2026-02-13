@@ -7,6 +7,14 @@ public class TopSecret {
     private static final String DEFAULT_KEY_PATH = "ciphers/key.txt";
 
     public static void main(String[] args) {
+        try {
+            ProgramControl program = new ProgramControl();
+            // if ProgramControl does work in its constructor, this will catch it
+            // if it has a method later, call it here
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
         FileHandler fileHandler = new FileHandler();
 
         if (args.length == 0) {
