@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -45,22 +44,24 @@ public class FileHandler {
         return fileNames;
     }
 
-    // Takes a file index as an input and returns a string of the file's contents
-    public String readFile(int fileNum) throws FileNotFoundException {
+    // Takes a file index as input and returns the file's contents
+    public String readFile(int fileNum) {
         ArrayList<String> files = getFileList();
         if (fileNum < 1 || fileNum > files.size())
             return "File Number not Found";
-        else
-            return readFile(files.get(fileNum-1));
+
+        return readFileByName(files.get(fileNum - 1));
     }
 
-    // Takes a file name as an input and returns a string of the file's contents
-    public String readFile(String fileName) throws FileNotFoundException {
-        try {
-            File currFile = new File(dataFolder, fileName);
-            if (!currFile.exists() || !currFile.isFile())
-                return "File Location Not Found";
+    private String readFileByName(String fileName) {
+        if (fileName == null || fileName.trim().isEmpty())
+            return "File Location Not Found";
 
+        File currFile = new File(dataFolder, fileName.trim());
+        if (!currFile.exists() || !currFile.isFile())
+            return "File Location Not Found";
+
+        try {
             return Files.readString(currFile.toPath());
         } catch (IOException e) {
             return "File Location Not Found";

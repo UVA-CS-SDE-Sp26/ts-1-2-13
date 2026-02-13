@@ -26,14 +26,14 @@ public class FileHandlerTest {
         }
         FileHandler fileHandler = new FileHandler(tempDir);
 
-        assertEquals("hello\nworld", fileHandler.readFile("message.txt"));
+        assertEquals("hello\nworld", fileHandler.readFile(1));
     }
 
     @Test
-    void fileFindingByName() throws IOException {
+    void fileNotFoundByInvalidIndex() throws IOException {
         FileHandler fileHandler = new FileHandler(tempDir);
 
-        assertEquals("File Location Not Found", fileHandler.readFile("missing.txt"));
+        assertEquals("File Number not Found", fileHandler.readFile(1));
     }
 
     @Test
