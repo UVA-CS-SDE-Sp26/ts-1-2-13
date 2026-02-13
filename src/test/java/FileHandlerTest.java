@@ -15,7 +15,7 @@ public class FileHandlerTest {
     @Test
     void fileListWithEmptyDirectory() {
         FileHandler fileHandler = new FileHandler(tempDir);
-        assertNull(fileHandler.getFileList());
+        assertTrue(fileHandler.getFileList().isEmpty());
     }
 
     @Test
@@ -26,7 +26,7 @@ public class FileHandlerTest {
         }
         FileHandler fileHandler = new FileHandler(tempDir);
 
-        assertEquals("helloworld", fileHandler.readFile("message.txt"));
+        assertEquals("hello\nworld", fileHandler.readFile("message.txt"));
     }
 
     @Test
@@ -44,7 +44,7 @@ public class FileHandlerTest {
         }
         FileHandler fileHandler = new FileHandler(tempDir);
 
-        assertEquals("File Index is Invalid", fileHandler.readFile(0));
+        assertEquals("File Number not Found", fileHandler.readFile(0));
     }
 
 }
