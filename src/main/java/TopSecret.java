@@ -23,7 +23,11 @@ public class TopSecret {
                 return;
             }
 
-            String keyPath = (args.length == 2) ? args[1] : getDefaultKeyPath();
+            String keyPath;
+            if (args.length == 2)
+                keyPath = getKeyPath(args[1]);
+            else
+                keyPath = getKeyPath("key.txt");
             Cipher cipher = new Cipher(keyPath);
             System.out.println(cipher.decipher(content));
 
@@ -55,8 +59,8 @@ public class TopSecret {
         return new File("data");
     }
 
-    private static String getDefaultKeyPath() {
-        String path = "../../../ciphers/key.txt";
+    private static String getKeyPath(String fileName) {
+        String path = "../../../ciphers/" + fileName;
         if (new File(path).exists())
             return path;
 
