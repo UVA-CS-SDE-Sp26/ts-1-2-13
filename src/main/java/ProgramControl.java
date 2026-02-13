@@ -34,10 +34,12 @@ public class ProgramControl {
         int intCheck = commandLineReader.read(argsArray);
 
         //Runs when only file number is provided
+        //deciphers the test file
         if (intCheck == 1) {
             String finalFile = fileHandler.readFile(Integer.parseInt(argsArray[0]));
             System.out.print(cipher.decipher(finalFile));
         }
+        //returns file list when no file number presented
         if (intCheck == 0) {
             System.out.print(fileHandler.getFileList());
         }
