@@ -4,7 +4,15 @@ import java.io.File;
 import java.util.Scanner;
 
 public class FileHandler {
-    private File dataFolder = new File("data");
+    private File dataFolder = new File("../data");
+
+    public FileHandler() {
+    }
+
+    public FileHandler(File dataFolder) {
+        if (dataFolder != null)
+            this.dataFolder = dataFolder;
+    }
 
     // Returns an Array List of all the files inside the data folder
     public ArrayList<String> getFileList(){
@@ -12,7 +20,6 @@ public class FileHandler {
         File[] files = dataFolder.listFiles();
         if (files == null || files.length == 0)
             return null;
-
 
         for(File file: files)
             fileNames.add(file.getName());
@@ -23,7 +30,7 @@ public class FileHandler {
     // Takes a file index as an input and returns a string of the file's contents
     public String readFile(int fileNum) throws FileNotFoundException {
         ArrayList<String> files = getFileList();
-        if(fileNum > files.size() || fileNum < 1)
+        if (files == null || fileNum >= files.size() || fileNum < 1)
             return "File Index is Invalid";
         else
             return readFile(files.get(fileNum-1));
