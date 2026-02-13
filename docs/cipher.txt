@@ -96,20 +96,23 @@ bcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ1234567890a
 
 
 TESTS:
+cipher constructors:
+ -loading a valid key file initializes the cipher correctly
+ -using an alternate key path makes different deciphered output
+ -missing or unreadable key file results in an error
 
--loadKey(path: String): void
+loadKey(path: String): void
+ -loading a key file with fewer than two lines throws an error
+ -loading a key file with empty lines throws an error
+ -loading a key file with different length lines throws an error
+ -loading a valid key makes the character arrays
 
--validateKey(): void
--noDuplicates(arr: char[]): void
+noDuplicates(arr: char[]): void
+ -loading a key file with duplicate characters throws an error
+ -loading a key file with all unique characters succeeds
 
-
-
-+decipher(cipherText: String): String
-
--loading a valid key file initializes the cipher correctly
--loading a key file with different length lines throws an error
--loading a key file with duplicate characters throws an error
--deciphering a known ciphered string returns the correct plaintext
--characters not present in the cipher key (spaces, punctuation, symbols) remain unchanged
--using an alternate key path produces different deciphered output
--missing or unreadable key file results in an error
+decipher(cipherText: String): String
+ -deciphering a known ciphered string returns the correct actual text
+ -characters not present in the cipher key (spaces, punctuation, symbols) remain unchanged
+ -deciphering an empty string returns an empty string
+ -deciphering using a different key produces different output
