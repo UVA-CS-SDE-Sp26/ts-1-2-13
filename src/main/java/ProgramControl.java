@@ -35,7 +35,7 @@ public class ProgramControl {
 
         //Runs when only file number is provided
         if (intCheck == 1) {
-            String finalFile =fileHandler.readFile(argsArray[0]);
+            String finalFile = fileHandler.readFile(Integer.parseInt(argsArray[0]));
             System.out.print(finalFile);
         }
         if (intCheck == 0) {

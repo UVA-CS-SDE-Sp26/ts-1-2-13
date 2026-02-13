@@ -50,10 +50,10 @@ public class FileHandler {
         if (fileNum < 1 || fileNum > files.size())
             return "File Number not Found";
 
-        return readFileByName(files.get(fileNum - 1));
+        return readFile(files.get(fileNum - 1));
     }
 
-    private String readFileByName(String fileName) {
+    private String readFile(String fileName) {
         if (fileName == null || fileName.trim().isEmpty())
             return "File Location Not Found";
 
