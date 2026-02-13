@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class FileHandler {
-    private File dataFolder = new File("data");
+    private File dataFolder = new File("C:/path/to/data");
 
     public FileHandler() {
         this.dataFolder = resolveDefaultDataFolder();
